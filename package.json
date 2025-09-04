@@ -1,7 +1,7 @@
 {
-  "name": "rauchg-blog",
+  "name": "rites-blog",
   "license": "MIT",
-  "description": "rauchg.com (blog)",
+  "description": "rites-blog - A personal blog inspired by rauchg.com",
   "dependencies": {
     "@fontsource/inter": "^4.5.15",
     "@fontsource/roboto-mono": "^4.5.10",
