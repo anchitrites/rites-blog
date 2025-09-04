@@ -32,11 +32,10 @@ export async function Image({
           process.env.VERCEL_URL &&
           process.env.NODE_ENV === "production"
         ) {
-          imageBuffer = Buffer.from(
-            await fetch("https://" + process.env.VERCEL_URL + src).then(res =>
-              res.arrayBuffer()
-            )
+          const arrayBuffer = await fetch("https://" + process.env.VERCEL_URL + src).then(res =>
+            res.arrayBuffer()
           );
+          imageBuffer = Buffer.from(arrayBuffer);
         } else {
           imageBuffer = await readFile(
             new URL(
