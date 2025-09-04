@@ -24,9 +24,8 @@ export async function Image({
       let imageBuffer: Buffer | null = null;
 
       if (src.startsWith("http")) {
-        imageBuffer = Buffer.from(
-          await fetch(src).then(res => res.arrayBuffer())
-        );
+        const arrayBuffer = await fetch(src).then(res => res.arrayBuffer());
+        imageBuffer = Buffer.from(arrayBuffer);
       } else {
         if (
           !process.env.CI &&
