@@ -1,13 +1,16 @@
 import "./globals.css";
 
-import { Inter } from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import { themeEffect } from "./theme-effect";
 import { Analytics } from "./analytics";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { doge } from "./doge";
 
-const inter = Inter({ subsets: ["latin"] });
+const sourceCodePro = Source_Code_Pro({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"]
+});
 
 export const metadata = {
   title: "Anchit Rites's blog",
@@ -41,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.className} antialiased`}
+      className={`${sourceCodePro.className} antialiased`}
       suppressHydrationWarning={true}
     >
       <head>
