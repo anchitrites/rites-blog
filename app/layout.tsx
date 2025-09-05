@@ -13,15 +13,15 @@ const sourceCodePro = Source_Code_Pro({
 });
 
 export const metadata = {
-  title: "Anchit Rites's blog",
+  title: "Anchit Rites",
   description:
     "Anchit Rites is a software engineer and developer passionate about creating innovative web applications and sharing knowledge through writing.",
   openGraph: {
-    title: "Anchit Rites's blog",
+    title: "Anchit Rites",
     description:
       "Anchit Rites is a software engineer and developer passionate about creating innovative web applications and sharing knowledge through writing.",
     url: "https://rites-blog-5u1mc9lgx-anchitrites-projects.vercel.app",
-    siteName: "Anchit Rites's blog",
+    siteName: "Anchit Rites",
     images: ["/opengraph-image"],
   },
   twitter: {
