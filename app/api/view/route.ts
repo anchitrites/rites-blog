@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  const post = postsData.posts.find(post => post.id === id);
+  const post = postsData.posts.find((post: any) => post.id === id) as any;
 
   if (post == null) {
     return NextResponse.json(
@@ -37,14 +37,18 @@ export async function GET(req: NextRequest) {
   if (url.searchParams.get("incr") != null) {
     const views = await redis.hincrby("views", id, 1);
     return NextResponse.json({
-      ...post,
+      id: post.id,
+      date: post.date,
+      title: post.title,
       views,
       viewsFormatted: commaNumber(views),
     });
   } else {
     const views = (await redis.hget("views", id)) ?? 0;
     return NextResponse.json({
-      ...post,
+      id: post.id,
+      date: post.date,
+      title: post.title,
       views,
       viewsFormatted: commaNumber(Number(views)),
     });
