@@ -9,7 +9,7 @@ type SortSetting = ["date" | "views", "desc" | "asc"];
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
-export function Posts({ posts: initialPosts }) {
+export function Posts({ posts: initialPosts }: { posts: any[] }) {
   const [sort, setSort] = useState<SortSetting>(["date", "desc"]);
   const { data: posts } = useSWR("/api/posts", fetcher, {
     fallbackData: initialPosts,
@@ -69,7 +69,7 @@ export function Posts({ posts: initialPosts }) {
   );
 }
 
-function List({ posts, sort }) {
+function List({ posts, sort }: { posts: any[]; sort: SortSetting }) {
   // sort can be ["date", "desc"] or ["views", "desc"] for example
   const sortedPosts = useMemo(() => {
     const [sortKey, sortDirection] = sort;
